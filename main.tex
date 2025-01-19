@@ -1,0 +1,88 @@
+\documentclass[a4paper,12pt]{article}
+
+% Packages
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{geometry}
+\usepackage{titlesec}
+\usepackage{tocloft}
+\usepackage{fancyhdr}
+\usepackage{hyperref}
+\usepackage{titling}
+\usepackage{mathptmx} % Times New Roman font
+\usepackage{graphicx} % For including images
+
+% Page Layout
+\geometry{left=2.5cm, right=2.5cm, top=3.5cm, bottom=2.5cm, headheight=2cm, headsep=0.8cm}
+
+% Custom font sizes for title, subtitle, and header
+\newcommand{\titlesize}{36pt}
+\newcommand{\subtitlesize}{24pt}
+\newcommand{\headersize}{10pt}
+
+% Header and Footer
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot[C]{\thepage}
+\fancyhead[L]{\raisebox{-0.4\height}{\includegraphics[height=1.2cm]{images/logo_tcm_upf.png}}} % Adjust the path to your image
+\fancyhead[R]{
+    \begin{tabular}{r}
+        {\fontsize{\headersize}{\headersize}\selectfont \thesubject\ \theperiod} \\
+        {\fontsize{\headersize}{\headersize}\selectfont \doctitle} \\
+        {\fontsize{\headersize}{\headersize}\selectfont \theauthor}
+    \end{tabular}
+}
+\renewcommand{\headrulewidth}{0pt} % Remove header underline
+
+% Title Formatting
+\titleformat{\section}{\large\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}{\normalsize\bfseries}{\thesubsection}{1em}{}
+
+% Document Metadata (used for title page and header)
+\title{Title}
+\author{Author}
+\newcommand{\thesubtitle}{Subtitle}
+\newcommand{\thesubject}{Subject}
+\newcommand{\thedegree}{4rt Enginyeria Informàtica}
+\newcommand{\theperiod}{2024-25}
+
+\edef\doctitle{\thetitle} % Copy value and fix it
+
+\begin{document}
+\thispagestyle{empty}
+\begin{center}
+
+\large{\theauthor}
+
+\vspace{6.5cm}
+
+{\fontsize{\titlesize}{\titlesize}\selectfont \thetitle} % Use custom font size for title
+
+\vspace{1em} % Add space between title and subtitle
+{\fontsize{\subtitlesize}{\subtitlesize}\selectfont \thesubtitle} % Use custom font size for subtitle
+
+\vfill % Fill the remaining space
+
+\large{\thesubject} \large{\theperiod}
+
+\large{\thedegree}
+
+\end{center}
+
+\newpage
+
+% Table of Contents
+\tableofcontents
+\newpage
+
+\section{Títol}
+\subsection{Subtítol}
+Text normal aquí.
+
+\newpage
+
+\section{Títol}
+\subsection{Subtítol}
+Més contingut aquí.
+
+\end{document}
